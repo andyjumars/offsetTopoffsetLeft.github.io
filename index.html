@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>offsetTop和offsetLeft</title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			
+			#father {
+				width: 400px;
+				height: 400px;
+				/* position: relative; */
+				background-color: red;
+				margin: 40px;
+				
+
+			}
+
+			#son {
+				width: 200px;
+				height: 100px;
+				background-color: #0000FF;
+				border: 5px solid #000;
+				margin-left: 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="father">
+				<div id="son"></div>
+		</div>
+		<script type="text/javascript">
+			//offsetTop，當前元素的上邊框到offsetParent元素的上邊框的距離
+			var son = document.getElementById('son');
+			//如果有父元素定位
+			//console.log(son.offsetParent);
+			//console.log(son.offsetTop,son.offsetLeft);//0 20
+			//如果沒有父元素定位
+			//console.log(son.offsetParent);
+			console.log(son.offsetTop,son.offsetLeft);//40 60
+			//總結：相對於父元素(看父元素是否有定位，如果有定位，以父元素為基準，如果沒有則往上尋找，如果一直找不到，最終以body為基準)的上邊距和下邊距
+		</script>
+	</body>
+</html>
